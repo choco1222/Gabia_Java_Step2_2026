@@ -1,0 +1,34 @@
+package chapter11;
+
+class OutterRun{
+	
+	//익명의 클래스
+	Runnable getRunnable(int i) {
+		
+		int num = 100;
+		return new Runnable() {
+			
+			@Override
+			public void run() {
+
+				System.out.println(i);
+				System.out.println(num);
+				
+			}
+		};
+		
+	}
+	
+}//OutterRun
+
+public class AnonyMousInnerMain_05 {
+
+	public static void main(String[] args) {
+
+		OutterRun out = new OutterRun();
+		Runnable runner = out.getRunnable(10);
+		runner.run();
+		
+	}
+
+}
